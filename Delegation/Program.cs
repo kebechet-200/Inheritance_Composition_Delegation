@@ -4,7 +4,7 @@
 /* FIRST (1) APPROACH using Inheritance 
  This approach works only the case when you have only one base class, for example engine here, 
  In this scenario only engine has started before the car start.
- If you have to call more than one class methods, this approach is useless.
+ If you have to call more than one classes method, this approach is useless.
  */
 
 var car = new Car();
