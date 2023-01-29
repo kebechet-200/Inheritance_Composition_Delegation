@@ -93,7 +93,7 @@ public class Car : Engine
 //public class Car
 //{
 //    private readonly StartEngine _startEngine;
-//    private readonly StopEngine _stopEngine; you can uncomment it and second method StopCar() and the program will work well
+//    private readonly StopEngine _stopEngine; you can comment it and second method StopCar() and the program will work well
 //    public Car()
 //    {
 //        _startEngine = new Engine().Start;
