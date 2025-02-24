@@ -41,73 +41,73 @@ public class Car : Engine
  Theres why delegation comes into play (3-rd approach)
  */
 
-//var car = new Car();
-//car.StartCar();
+var car = new Car();
+car.StartCar();
 
-//public class Engine
-//{
-//    internal void Start() =>
-//        Console.WriteLine("Engine started!");
-//    internal void Stop() =>
-//        Console.WriteLine("Engine stopped!");
-//}
+public class Engine
+{
+   internal void Start() =>
+       Console.WriteLine("Engine started!");
+   internal void Stop() =>
+       Console.WriteLine("Engine stopped!");
+}
 
-//public class Car
-//{
-//    private readonly Engine _engine;
-//    public Car()
-//    {
-//        _engine = new Engine();
-//    }
-//    public void StartCar()
-//    {
-//        _engine.Start();
-//        Console.WriteLine("Car started!");
-//    }
+public class Car
+{
+   private readonly Engine _engine;
+   public Car()
+   {
+       _engine = new Engine();
+   }
+   public void StartCar()
+   {
+       _engine.Start();
+       Console.WriteLine("Car started!");
+   }
 
-//    public void StopCar()
-//    {
-//        _engine.Stop();
-//        Console.WriteLine("Car stopped");
-//    }
-//}
+   public void StopCar()
+   {
+       _engine.Stop();
+       Console.WriteLine("Car stopped");
+   }
+}
 
 /* Third (3) APPROACH!! Using Delegation */
 
 
-//var car = new Car();
-//car.StartCar();
-//car.StopCar();
+var car = new Car();
+car.StartCar();
+car.StopCar();
 
-//delegate void StartEngine();
-//delegate void StopEngine();
+delegate void StartEngine();
+delegate void StopEngine();
 
-//public class Engine
-//{
-//    internal void Start() =>
-//        Console.WriteLine("Engine started!");
-//    internal void Stop() =>
-//        Console.WriteLine("Engine stopped!");
-//}
+public class Engine
+{
+   internal void Start() =>
+       Console.WriteLine("Engine started!");
+   internal void Stop() =>
+       Console.WriteLine("Engine stopped!");
+}
 
-//public class Car
-//{
-//    private readonly StartEngine _startEngine;
-//    private readonly StopEngine _stopEngine; you can comment it and second method StopCar() and the program will work well
-//    public Car()
-//    {
-//        _startEngine = new Engine().Start;
-//        _stopEngine = new Engine().Stop;
-//    }
-//    public void StartCar()
-//    {
-//        _startEngine();
-//        Console.WriteLine("Car started!");
-//    }
+public class Car
+{
+   private readonly StartEngine _startEngine;
+   private readonly StopEngine _stopEngine; // you can comment it and second method StopCar() and the program will work well
+   public Car()
+   {
+       _startEngine = new Engine().Start;
+       _stopEngine = new Engine().Stop;
+   }
+   public void StartCar()
+   {
+       _startEngine();
+       Console.WriteLine("Car started!");
+   }
 
-//    public void StopCar()
-//    {
-//        _stopEngine();
-//        Console.WriteLine("Car stopped");
-//    }
-//}
+   public void StopCar()
+   {
+       _stopEngine();
+       Console.WriteLine("Car stopped");
+   }
+}
